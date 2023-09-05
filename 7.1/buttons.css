@@ -1,0 +1,96 @@
+* {
+  background-color: darkcyan;
+}
+
+button {
+  border: none;
+  padding: 5px 3px;
+}
+
+#first {
+  background-color: blue;
+  color: white;
+}
+
+#first:hover {
+  background-color: blue;
+  cursor: pointer;
+}
+
+#secend {
+  background-color: yellow;
+  color: white;
+}
+
+#secend:hover {
+  background-color: yellow;
+  cursor: pointer;
+}
+
+#third {
+  background-color: green;
+  color: white;
+  border-radius: 30px;
+}
+
+#third:hover {
+  background-color: green;
+  cursor: pointer;
+}
+
+#fourth {
+  background-color: palevioletred;
+  color: white;
+  border-radius: 30px;
+}
+
+#fourth:hover {
+  background-color: palevioletred;
+  cursor: pointer;
+}
+
+#fifth {
+  border-color: orange;
+  color: white;
+  border: 1px solid orange;
+}
+
+#fifth:hover {
+  background-color: orange;
+  cursor: pointer;
+}
+
+#sixth {
+  border-color: blueviolet;
+  color: white;
+  border: 1px solid purple;
+}
+
+#sixth:hover {
+  background-color: blueviolet;
+  cursor: pointer;
+}
+
+#seventh {
+  border-color: yellow;
+  color: white;
+  border-radius: 30px;
+  border: 1px solid yellow;
+}
+
+#seventh:hover {
+  background-color: yellow;
+  cursor: pointer;
+}
+
+#last {
+  border-color: aqua;
+  color: white;
+  border-radius: 30px;
+  border: 1px solid blue;
+}
+
+#last:hover {
+  background-color: aqua;
+  cursor: pointer;
+}
