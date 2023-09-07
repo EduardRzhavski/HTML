@@ -1,0 +1,16 @@
+button {
+  background-color: blue;
+  color: #fff;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.Dislike {
+  background-color: red;
+}
+
+button:hover {
+  background-color: antiquewhite;
+}
