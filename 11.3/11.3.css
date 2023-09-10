@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.box-container {
+    display: flex;
+
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+}
+
+.box.red {
+    background-color:red
+}
+
+.box.green {
+    background-color: green
+}
+
+.box.blue {
+    background-color: blue
+}
