@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+
+
+.box {
+    width: 100px;
+    height: 100px;
+    margin: 30px;
+}
+
+.box.red {
+    background-color:red
+}
+
+.box.green {
+    background-color: green
+}
+
+.box.blue {
+    background-color: blue
+}
