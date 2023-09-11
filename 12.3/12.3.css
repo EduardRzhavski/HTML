@@ -15,6 +15,6 @@
     background-color:orangered
 }
 
-.box:hover::after {
+.box:hover:after {
     background-color: green;
 }
