@@ -1,10 +1,13 @@
 .navbar {
     background-color: grey;
     overflow: hidden;
+    display: flex;
             justify-content: space-between;
             align-items: center;
 }
-
+nav{
+    display: flex;
+}
 .navbar a {
     float: right;
     display: block;
@@ -20,9 +23,10 @@
 }
 
 @media (max-width: 768px) {
-    .navbar a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
+   .navbar{
+    flex-direction: column;
+   }
+   nav{
+    flex-direction: column;
+   }
 }
