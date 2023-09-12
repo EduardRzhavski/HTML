@@ -12,14 +12,13 @@ body {
     
 }
 
-.box {
+.box1 {
     width: 100px;
     height: 100px;
-    background-color: lightseagreen;
     position: relative;
 }
 
-.box::before {
+.box1::before {
     content: "";
     position: absolute;
     width: 100px;
@@ -28,7 +27,7 @@ body {
     transform: translateX(100%);
     }
 
-.box:hover::before {
+.box1:hover::before {
     transform: translateX(0);
     background-color: blue;
 
