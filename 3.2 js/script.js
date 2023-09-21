@@ -2,31 +2,38 @@
 //     let welcome = 'Welcome to Appleseeds Bootcamp!';
 //     return welcome;
 //     }
-    
-const welcome = function()  {
-    let welcome = 'Welcome to Appleseeds Bootcamp!';
-    return welcome;
-  };
-    
-  const welcome = () => 'Welcome to Appleseeds Bootcamp!';
-    
-    
-    
-    function power(a) {
-    let myNumber = a;
-    let result = Math.pow(myNumber, 2);
-    return result;
-    }
-    
-    
-    
-    // From function expressions to IIFE functions.
-    
-    const squareRoot = a => Math.sqrt(a);
-    
-    
-    
-    
-    const randomNumbers = (a, b) => Math.random() * (a - b) +
-    b;
 
+(function () {
+  let welcome = "Welcome to Appleseeds Bootcamp!";
+  console.log(welcome);
+})();
+
+//   function power(a) {
+//     let myNumber = a;
+//     let result = Math.pow(myNumber, 2);
+//     return result;
+//     }
+
+const power = function (a) {
+  let myNumber = a;
+  let result = Math.pow(myNumber, 2);
+  return result;
+};
+
+// const squareRoot = a => Math.sqrt(a);
+
+const number = 16; 
+
+const squareRoot = (function (a) {
+  return Math.sqrt(a);
+})(number);
+
+console.log(squareRoot);
+
+// const randomNumbers = (a, b) => Math.random() * (a - b) + b;
+
+
+const randomNumbers = ((a, b) => {
+  return Math.random() * (a - b) + b;
+})
+console.log(randomNumbers);
