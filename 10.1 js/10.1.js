@@ -1,4 +1,5 @@
 function isString(input, callback) {
+  console.log(callback)
     if (typeof input === 'string') {
       callback(input);
     } else {
