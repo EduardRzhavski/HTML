@@ -27,21 +27,21 @@
 
   //3   
 
-//   function showFirstAndLast(arr) {
-//     const resultArray = [];
+  // function showFirstAndLast(arr) {
+  //   const resultArray = [];
   
-//     arr.forEach((element, index) => {
-//       if (typeof element === 'string' && (index === 0 || index === arr.length - 1)) {
-//         resultArray.push(element);
-//       }
-//     });
+  //   arr.forEach((element, index) => {
+  //     if (typeof element === 'string' && (index === 0 || index === arr.length - 1)) {
+  //       resultArray.push(element);
+  //     }
+  //   });
   
-//     return resultArray;
-//   }
+  //   return resultArray;
+  // }
   
-//   const inputArray = ['Apple', 'Hi', 'Eduard', '2000'];
-//   const filteredArray = showFirstAndLast(inputArray);
-//   console.log(filteredArray); 
+  // const inputArray = ['Apple', 'Hi', 'Eduard', '2000'];
+  // const filteredArray = showFirstAndLast(inputArray);
+  // console.log(filteredArray); 
   
 //4
 
@@ -81,40 +81,40 @@
   
 //6
 
-// function shiftLetters(str) {
-//     return str.split('').map((char) => {
-//       if (/[a-zA-Z]/.test(char)) {
-//         const isUpperCase = char === char.toUpperCase();
-//         const offset = isUpperCase ? 'A'.charCodeAt(0) : 'a'.charCodeAt(0);
-//         const shiftedCharCode = (char.charCodeAt(0) - offset - 1 + 26) % 26 + offset;
-//         return String.fromCharCode(shiftedCharCode);
-//       } else {
-//         return char;
-//       }
-//     }).join('');
-//   }
-  
-//   const inputString = 'Hi Eduard';
-//   const encodedString = shiftLetters(inputString);
-//   console.log(encodedString);
-
-//7   
-  
-function swapCase(str) {
-    const words = str.split(' ');
-  
-    const swappedWords = words.map((word, index) => {
-      if (index % 2 === 1) {
-        return word.toUpperCase();
+function shiftLetters(str) {
+    return str.split('').map((char) => {
+      if (/[a-zA-Z]/.test(char)) {
+        const isUpperCase = char === char.toUpperCase();
+        const offset = isUpperCase ? 'A'.charCodeAt(0) : 'a'.charCodeAt(0);
+        const shiftedCharCode = (char.charCodeAt(0) - offset - 1 + 26) % 26 + offset;
+        return String.fromCharCode(shiftedCharCode);
       } else {
-        return word;
+        return char;
       }
-    });
-  
-    return swappedWords.join(' ');
+    }).join('');
   }
   
   const inputString = 'Hi Eduard';
-  const swappedString = swapCase(inputString);
-  console.log(swappedString); 
+  const encodedString = shiftLetters(inputString);
+  console.log(encodedString);
+
+//7   
+  
+// function swapCase(str) {
+//     const words = str.split(' ');
+  
+//     const swappedWords = words.map((word, index) => {
+//       if (index % 2 === 1) {
+//         return word.toUpperCase();
+//       } else {
+//         return word;
+//       }
+//     });
+  
+//     return swappedWords.join(' ');
+//   }
+  
+//   const inputString = 'Hi Eduard';
+//   const swappedString = swapCase(inputString);
+//   console.log(swappedString); 
   
