@@ -20,13 +20,13 @@ elementsInsideBody.forEach((element, index) => {
 
 // Select all elements using querySelector method
 
-const elementsInsideBody = document.querySelectorAll('body *');
+// const elementsInsideBody = document.querySelectorAll('body *');
 
-const elementsArray = Array.from(elementsInsideBody);
+// const elementsArray = Array.from(elementsInsideBody);
 
-elementsArray.forEach((element, index) => {
-  console.log(`Element ${index + 1}:`, element);
-});
+// elementsArray.forEach((element, index) => {
+//   console.log(`Element ${index + 1}:`, element);
+// });
 
 // -------------------------------------------------------------------
 
@@ -34,11 +34,11 @@ elementsArray.forEach((element, index) => {
 // method and print each one to the console. Using both
 // querySelectorAll and getElementsByTagName
 
-const inputElementsByTagName = document.getElementsByTagName('input');
+// const inputElementsByTagName = document.getElementsByTagName('input');
 
-const inputArray = Array.from(inputElementsByTagName);
+// const inputArray = Array.from(inputElementsByTagName);
 
-inputArray.forEach((element, index) => {
-  console.log(`Input ${index + 1}:`, element);
-});
+// inputArray.forEach((element, index) => {
+//   console.log(`Input ${index + 1}:`, element);
+// });
 
