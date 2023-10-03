@@ -1,20 +1,20 @@
 // Select all elements not using the querySelector method
 
-const bodyElement = document.body;
+// const bodyElement = document.body;
 
-const elementsInsideBody = [];
+// const elementsInsideBody = [];
 
-for (let i = 0; i < bodyElement.childNodes.length; i++) {
-  const childNode = bodyElement.childNodes[i];
+// for (let i = 0; i < bodyElement.childNodes.length; i++) {
+//   const childNode = bodyElement.childNodes[i];
 
-  if (childNode.nodeType === 1) {
-    elementsInsideBody.push(childNode);
-  }
-}
+//   if (childNode.nodeType === 1) {
+//     elementsInsideBody.push(childNode);
+//   }
+// }
 
-elementsInsideBody.forEach((element, index) => {
-  console.log(`Element ${index + 1}:`, element);
-});
+// elementsInsideBody.forEach((element, index) => {
+//   console.log(`Element ${index + 1}:`, element);
+// });
 
 // ----------------------------------------------------------------
 
