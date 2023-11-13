@@ -1,0 +1,71 @@
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    border-radius: 50px;
+  }
+  
+  .section {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 0;
+  }
+
+  .name-container {
+    display: flex;
+  }
+
+  .name-field {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .business-employees-container {
+    display: flex;
+  }
+
+  .business-field {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .employees-field {
+    flex: 1;
+  }
+
+  .zip-place-container {
+    display: flex;
+  }
+
+  .zip-field {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .place-field {
+    flex: 1;
+  }
+
+  .code-phone-container {
+    display: flex;
+  }
+
+  .code-field {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .phone-field {
+    flex: 1;
+  }
+
+  .section:nth-child(1) h2 {
+    color: blue;
+  }
+
+  .section:nth-child(2) {
+    background-color: blue;
+    color: white;
+  }

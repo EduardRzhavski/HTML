@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Array of Movies.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <div class="movie-container" id="movieContainer"></div>
+
+    <div class="add-movie-form">
+      <h3>Add a New Movie</h3>
+      <form id="movieForm">
+          <label for="title">Title:</label>
+          <input type="text" id="title" required>
+          
+          <label for="genre">Genre:</label>
+          <input type="text" id="genre" required>
+          
+          <label for="director">Director:</label>
+          <input type="text" id="director" required>
+          
+          <label for="releaseYear">Release Year:</label>
+          <input type="number" id="releaseYear" required>
+          
+          <label for="rating">Rating:</label>
+          <input type="number" step="0.1" id="rating" required>
+          
+          <label for="votes">Votes:</label>
+          <input type="number" id="votes" required>
+          
+          <button type="submit">Add Movie</button>
+      </form>
+  </div>
+
+    <script src="Array of Movies.js"></script>
+  </body>
+</html>
