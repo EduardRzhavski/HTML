@@ -51,5 +51,3 @@ a.  this will refer to the this value of the surrounding scope where the arrow f
 b. document.querySelector(".element").addEventListener(function() {
     console.log(this); 
   });
-  
-  
