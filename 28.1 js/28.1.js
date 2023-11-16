@@ -1,18 +1,18 @@
-    function fetchJoke() {
-      fetch("https://api.jokes.one/jod")
-        .then(response => response.json())
-        .then(data => {
 
-            const jokeTitle = data.contents.jokes[0].joke.title;
-          const jokeText = data.contents.jokes[0].joke.text;
 
-          document.getElementById("jokeTitle").textContent = `Joke Title: ${jokeTitle}`;
-          document.getElementById("jokeText").textContent = `Joke: ${jokeText}`;
-        })
-        .catch(error => {
-          console.error('Error fetching joke:', error);
-        });
+    async function fetchChuckNorrisJoke() {
+      try {
+        const response = await fetch("https://api.chucknorris.io/jokes/random");
+        const data = await response.json();
+
+        const jokeTitle = data.category;
+        const jokeText = data.value;
+
+        document.getElementById("jokeTitle").textContent = `Category: ${jokeTitle}`;
+        document.getElementById("jokeText").textContent = `Joke: ${jokeText}`;
+      } catch (error) {
+        console.error('Error fetching Chuck Norris joke:', error);
+      }
     }
 
-    document.getElementById("fetchJokeButton").addEventListener("click", fetchJoke);
-
+    document.getElementById("fetchJokeButton").addEventListener("click", fetchChuckNorrisJoke);
