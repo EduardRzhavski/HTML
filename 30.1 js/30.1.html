@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Info App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: gray;
+        }
+
+        input {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        #user-card {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        #user-card img {
+            max-width: 100px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body onload="focusInput()">
+    <h1>GitHub User Info App</h1>
+    <input type="text" id="username" placeholder="Enter GitHub username" onkeydown="searchOnEnter()">
+    <button onclick="getUserInfo()">Search</button>
+
+    <div id="user-card" onclick="openUserProfile()">
+        <img id="avatar" alt="User Avatar">
+        <h2 id="name"></h2>
+        <p id="repos"></p>
+    </div>
+
+    <script>
+        function getUserInfo() {
+            const usernameInput = document.getElementById('username');
+            const username = usernameInput.value;
+
+            if (username.trim() === '') {
+                alert('Please enter a GitHub username.');
+                return;
+            }
+
+            const userCard = document.getElementById('user-card');
+
+            if (userCard) {
+                fetch(`https://api.github.com/users/${username}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`GitHub API request failed with status ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        document.getElementById('avatar').src = data.avatar_url;
+                        document.getElementById('name').innerText = data.name || data.login;
+                        document.getElementById('repos').innerText = `Public Repositories: ${data.public_repos}`;
+
+                        usernameInput.value = '';
+                        focusInput();
+                    })
+                    .catch(error => {
+                        console.error('Error fetching user data:', error);
+                        alert(`Error fetching user data: ${error.message}`);
+                    });
+            } else {
+                alert('User card does not exist. Please enter a different username.');
+            }
+        }
+
+        function openUserProfile() {
+            const username = document.getElementById('username').value;
+            window.open(`https://github.com/${username}`);
+        }
+
+        function focusInput() {
+            document.getElementById('username').focus();
+        }
+
+        function searchOnEnter(event) {
+            if (event.key === 'Enter') {
+                getUserInfo();
+            }
+        }
+    </script>
+</body>
+</html>
