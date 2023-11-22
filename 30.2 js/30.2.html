@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    #movie-container {
+      margin-top: 20px;
+    }
+
+    #movie-poster {
+      max-width: 300px;
+      margin-bottom: 10px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+  <h1>Movie App</h1>
+
+  <label for="movie-input">Enter Movie Name: </label>
+  <input type="text" id="movie-input">
+  <button onclick="searchMovie()">Search</button>
+
+  <div id="movie-container"></div>
+
+  <script>
+    function searchMovie() {
+      $('#movie-container').empty();
+
+      const movieName = $('#movie-input').val();
+
+      $.ajax({
+        url: 'https://www.omdbapi.com/',
+        type: 'GET',
+        dataType: 'json',
+        data: {
+          apikey: '29bac03a',
+          t: movieName
+        },
+        success: function(data) {
+          if (data.Response === 'True') {
+            displayMovie(data);
+          } else {
+            $('#movie-container').html('<p>Movie not found!</p>');
+          }
+        },
+        error: function() {
+          $('#movie-container').html('<p>There was an error. Please try again later.</p>');
+        }
+      });
+    }
+
+    function displayMovie(data) {
+      const movieContainer = $('#movie-container');
+
+      if (data.Poster !== 'N/A') {
+        movieContainer.append(`<img src="${data.Poster}" alt="Movie Poster" id="movie-poster">`);
+      }
+
+      movieContainer.append(`<p><strong>Title:</strong> ${data.Title}</p>`);
+      movieContainer.append(`<p><strong>Genre:</strong> ${data.Genre}</p>`);
+      movieContainer.append(`<p><strong>Year:</strong> ${data.Year}</p>`);
+      movieContainer.append(`<p><strong>Plot:</strong> ${data.Plot}</p>`);
+      movieContainer.append(`<p><strong>Director:</strong> ${data.Director}</p>`);
+      movieContainer.append(`<p><strong>Actors:</strong> ${data.Actors}</p>`);
+
+      if (data.Ratings.length > 0) {
+        for (let i = 0; i < data.Ratings.length; i++) {
+          const rating = data.Ratings[i];
+          movieContainer.append(`<p><strong>${rating.Source} Rating:</strong> ${rating.Value}</p>`);
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
